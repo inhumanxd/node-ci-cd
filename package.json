@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest test/test.js",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "test": "cross-env NODE_ENV_MODE=test jest test/test.js",
+    "testOpenHandles": "cross-env NODE_ENV_MODE=test jest test/test.js --detectOpenHandles",
+    "start": "cross-env NODE_ENV_MODE=production node index.js",
+    "dev": "cross-env NODE_ENV_MODE=development nodemon index.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "express": "^4.17.3"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "jest": "^27.5.1",
     "mocha": "^9.2.1",
     "nodemon": "^2.0.15",
